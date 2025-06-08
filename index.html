@@ -3,23 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Analyseur de Texte Universel - Universal Text Analyzer</title>
-    <meta name="description" content="Application web intelligente pour l'analyse et la catégorisation automatique de réponses textuelles avec support du dialecte marocain (darija)">
-    <meta name="keywords" content="analyse texte, darija, marocain, dialecte, traduction, correspondances, excel">
-    <meta name="author" content="Votre Nom">
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://votrenom.github.io/analyseur-texte-universel/">
-    <meta property="og:title" content="Analyseur de Texte Universel">
-    <meta property="og:description" content="Outil intelligent pour analyser et catégoriser automatiquement des réponses textuelles">
-    
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://votrenom.github.io/analyseur-texte-universel/">
-    <meta property="twitter:title" content="Analyseur de Texte Universel">
-    <meta property="twitter:description" content="Outil intelligent pour analyser et catégoriser automatiquement des réponses textuelles">
-    
+    <title>Analyseur de Texte Intelligent - Version Améliorée</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
     <style>
         body {
@@ -52,39 +36,12 @@
             margin: 10px 0;
             font-size: 1.1em;
         }
-        .github-link {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: #333;
-            color: white;
-            padding: 10px 15px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: all 0.3s;
-        }
-        .github-link:hover {
-            background: #555;
-            transform: translateY(-2px);
-        }
         .version-info {
-            background: #e3f2fd;
-            border-left: 4px solid #2196f3;
+            background: #e8f5e8;
             padding: 15px;
-            margin: 20px 0;
             border-radius: 8px;
-        }
-        .limitations {
-            background: #fff3e0;
-            border-left: 4px solid #ff9800;
-            padding: 15px;
-            margin: 20px 0;
-            border-radius: 8px;
-        }
-        .limitations h4 {
-            margin-top: 0;
-            color: #f57c00;
+            margin: 15px 0;
+            border-left: 4px solid #28a745;
         }
         
         /* Mode Selector */
@@ -190,49 +147,6 @@
             border: 1px solid #ccc;
             border-radius: 4px;
             font-size: 14px;
-        }
-
-        /* Learning Interface */
-        .learning-interface {
-            background: white;
-            border-radius: 12px;
-            padding: 20px;
-            margin: 20px 0;
-            border: 2px solid #667eea;
-        }
-        .sample-item {
-            background: #f8f9fa;
-            border-radius: 8px;
-            padding: 15px;
-            margin: 10px 0;
-            border-left: 4px solid #667eea;
-        }
-        .sample-response {
-            font-weight: bold;
-            color: #333;
-            margin-bottom: 10px;
-        }
-        .suggested-categories {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-            margin: 10px 0;
-        }
-        .category-tag {
-            background: #667eea;
-            color: white;
-            padding: 5px 10px;
-            border-radius: 15px;
-            font-size: 12px;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-        .category-tag:hover {
-            background: #5a6fd8;
-        }
-        .category-tag.rejected {
-            background: #dc3545;
-            text-decoration: line-through;
         }
 
         /* Status and Results */
@@ -386,288 +300,183 @@
             transition: width 0.3s ease;
         }
 
-        /* Footer */
-        .footer {
-            text-align: center;
-            margin-top: 50px;
-            padding-top: 20px;
-            border-top: 2px solid #e0e0e0;
-            color: #666;
+        .algorithm-info {
+            background: #f0f8ff;
+            border: 1px solid #b3d9ff;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 20px 0;
         }
-        .footer a {
-            color: #667eea;
-            text-decoration: none;
-        }
-        .footer a:hover {
-            text-decoration: underline;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .container {
-                padding: 15px;
-            }
-            .header h1 {
-                font-size: 2em;
-            }
-            .github-link {
-                position: relative;
-                top: auto;
-                right: auto;
-                display: inline-block;
-                margin: 10px 0;
-            }
+        .algorithm-info h4 {
+            color: #0066cc;
+            margin-top: 0;
         }
     </style>
 </head>
 <body>
-    <a href="https://github.com/votrenom/analyseur-texte-universel" class="github-link" target="_blank">
-        📚 GitHub
-    </a>
-
     <div class="container">
         <div class="header">
-            <h1>🔄 Analyseur de Texte Universel</h1>
-            <p>Traitement intelligent de données textuelles avec 4 modes d'analyse</p>
-            <p><em>Version open source - Traitement 100% local et privé</em></p>
+            <h1>🧠 Analyseur de Texte Intelligent</h1>
+            <p>Analyse multi-concepts avec traduction IA et matching avec liste de référence</p>
+            <div class="version-info">
+                <strong>🎯 Version Améliorée</strong> - Sans dictionnaire interne : L'IA traduit en temps réel et matche avec votre liste de référence. Détection de plusieurs concepts par phrase avec colonne "Traduction IA" pour les non-identifiés.
+            </div>
             <input type="text" id="projectTitle" placeholder="Nom de votre projet (ex: Analyse satisfaction client)" 
                    style="width: 400px; padding: 10px; border: 2px solid #667eea; border-radius: 8px; font-size: 16px; text-align: center;">
-        </div>
-
-        <div class="version-info">
-            <h4>ℹ️ Version publique gratuite</h4>
-            <p>Cette application fonctionne entièrement dans votre navigateur. Vos données ne quittent jamais votre ordinateur.</p>
-            <p><strong>Code source :</strong> <a href="https://github.com/votrenom/analyseur-texte-universel" target="_blank">GitHub</a> | 
-               <strong>Licence :</strong> MIT | 
-               <strong>Support :</strong> Issues GitHub</p>
-        </div>
-
-        <div class="limitations">
-            <h4>⚠️ Limitations de la version publique</h4>
-            <ul>
-                <li><strong>Taille max :</strong> 10 000 lignes par fichier</li>
-                <li><strong>Fichiers :</strong> 50 MB maximum</li>
-                <li><strong>Traduction :</strong> Dictionnaire local uniquement (pas d'API externe)</li>
-                <li><strong>Support :</strong> Communauté GitHub</li>
-            </ul>
         </div>
 
         <!-- Mode Selector -->
         <div class="mode-selector">
             <h3>🎯 Choisissez votre méthode de traitement</h3>
             <div class="mode-cards">
-                <div class="mode-card" data-mode="auto">
-                    <h4>🤖 Correspondances Automatiques</h4>
-                    <p>Génération automatique des correspondances par analyse de similarité</p>
+                <div class="mode-card" data-mode="intelligent">
+                    <h4>🧠 Analyse Multi-Concepts</h4>
+                    <p>Détection de tous les concepts dans chaque phrase avec traduction IA intelligente</p>
                 </div>
-                <div class="mode-card" data-mode="custom">
-                    <h4>📋 Base Personnalisée</h4>
-                    <p>Utilisez votre propre dictionnaire de correspondances</p>
+                <div class="mode-card" data-mode="hybrid">
+                    <h4>🔗 Mode Hybride</h4>
+                    <p>Combine votre dictionnaire personnel + analyse multi-concepts IA</p>
                 </div>
-                <div class="mode-card" data-mode="adaptive">
-                    <h4>🧠 Apprentissage Adaptatif</h4>
-                    <p>L'IA apprend avec vos corrections sur un échantillon</p>
-                </div>
-                <div class="mode-card" data-mode="translate">
-                    <h4>🌍 Traduction Locale</h4>
-                    <p>Traduction darija-français avec dictionnaire intégré</p>
+                <div class="mode-card" data-mode="advanced">
+                    <h4>⚙️ Analyse Personnalisée</h4>
+                    <p>Paramètres avancés pour un contrôle total de l'analyse</p>
                 </div>
             </div>
         </div>
 
         <!-- Configuration Panels -->
         
-        <!-- Mode Automatique -->
-        <div id="config-auto" class="config-panel">
-            <h3>🤖 Configuration - Correspondances Automatiques</h3>
-            <div class="file-upload" id="upload-auto-main">
-                <strong>📄 Fichier principal (réponses à traiter)</strong>
-                <input type="file" id="mainFile-auto" accept=".xlsx,.xls" />
+        <!-- Mode Intelligent -->
+        <div id="config-intelligent" class="config-panel">
+            <h3>🧠 Configuration - Analyse Multi-Concepts</h3>
+            <div class="algorithm-info">
+                <h4>Nouvelle approche intelligente :</h4>
+                <p>• <strong>Détection multi-concepts</strong> : Identifie tous les concepts dans chaque phrase</p>
+                <p>• <strong>Traduction IA contextuelle</strong> : Sans dictionnaire prédéfini, traduction adaptative</p>
+                <p>• <strong>Matching intelligent</strong> : Compare avec votre liste de référence</p>
+                <p>• <strong>Colonne "Traduction IA"</strong> : Pour les concepts non identifiés dans la liste</p>
+            </div>
+            <div class="file-upload" id="upload-intelligent-main">
+                <strong>📄 Fichier principal (réponses à analyser)</strong>
+                <input type="file" id="mainFile-intelligent" accept=".xlsx,.xls" />
                 <p>Fichier contenant les réponses textuelles à analyser</p>
             </div>
-            <div class="file-upload" id="upload-auto-ref">
+            <div class="file-upload" id="upload-intelligent-ref">
                 <strong>📋 Fichier de référence (catégories cibles)</strong>
-                <input type="file" id="refFile-auto" accept=".xlsx,.xls" />
+                <input type="file" id="refFile-intelligent" accept=".xlsx,.xls" />
                 <p>Fichier contenant la liste des catégories standardisées</p>
-            </div>
-            <div class="parameters">
-                <div class="param-group">
-                    <label>Seuil de similarité (%)</label>
-                    <input type="range" id="similarity-threshold" min="50" max="95" value="75" 
-                           oninput="document.getElementById('similarity-value').textContent = this.value + '%'">
-                    <span id="similarity-value">75%</span>
-                </div>
-                <div class="param-group">
-                    <label>Correspondances max par réponse</label>
-                    <select id="max-matches">
-                        <option value="1">1</option>
-                        <option value="2" selected>2</option>
-                        <option value="3">3</option>
-                    </select>
-                </div>
-                <div class="param-group">
-                    <label>Longueur min des mots</label>
-                    <input type="number" id="min-word-length" value="3" min="2" max="10">
-                </div>
             </div>
         </div>
 
-        <!-- Mode Personnalisé -->
-        <div id="config-custom" class="config-panel">
-            <h3>📋 Configuration - Base Personnalisée</h3>
-            <div class="file-upload" id="upload-custom-main">
-                <strong>📄 Fichier principal (réponses à traiter)</strong>
-                <input type="file" id="mainFile-custom" accept=".xlsx,.xls" />
+        <!-- Mode Hybride -->
+        <div id="config-hybrid" class="config-panel">
+            <h3>🔗 Configuration - Mode Hybride</h3>
+            <div class="algorithm-info">
+                <h4>Fonctionnement hybride :</h4>
+                <p>• <strong>Priorité au dictionnaire</strong> : Recherche d'abord dans votre dictionnaire</p>
+                <p>• <strong>Complément IA</strong> : Analyse intelligente pour les termes non trouvés</p>
+                <p>• <strong>Multi-concepts</strong> : Détection de plusieurs idées par phrase</p>
+                <p>• <strong>Traduction des résidus</strong> : Colonne IA pour ce qui n'est pas matché</p>
             </div>
-            <div class="file-upload" id="upload-custom-ref">
+            <div class="file-upload" id="upload-hybrid-main">
+                <strong>📄 Fichier principal (réponses à analyser)</strong>
+                <input type="file" id="mainFile-hybrid" accept=".xlsx,.xls" />
+            </div>
+            <div class="file-upload" id="upload-hybrid-ref">
                 <strong>📋 Fichier de référence (catégories cibles)</strong>
-                <input type="file" id="refFile-custom" accept=".xlsx,.xls" />
+                <input type="file" id="refFile-hybrid" accept=".xlsx,.xls" />
             </div>
-            <div class="file-upload" id="upload-custom-dict">
+            <div class="file-upload" id="upload-hybrid-dict">
                 <strong>📚 Fichier de correspondances (votre dictionnaire)</strong>
-                <input type="file" id="dictFile-custom" accept=".xlsx,.xls" />
+                <input type="file" id="dictFile-hybrid" accept=".xlsx,.xls" />
                 <p>Format: Colonne A = Termes source, Colonne B = Catégories cibles</p>
             </div>
         </div>
 
-        <!-- Mode Adaptatif -->
-        <div id="config-adaptive" class="config-panel">
-            <h3>🧠 Configuration - Apprentissage Adaptatif</h3>
-            <div class="file-upload" id="upload-adaptive-main">
-                <strong>📄 Fichier principal (réponses à traiter)</strong>
-                <input type="file" id="mainFile-adaptive" accept=".xlsx,.xls" />
+        <!-- Mode Avancé -->
+        <div id="config-advanced" class="config-panel">
+            <h3>⚙️ Configuration - Analyse Personnalisée</h3>
+            <div class="file-upload" id="upload-advanced-main">
+                <strong>📄 Fichier principal (réponses à analyser)</strong>
+                <input type="file" id="mainFile-advanced" accept=".xlsx,.xls" />
             </div>
-            <div class="file-upload" id="upload-adaptive-ref">
+            <div class="file-upload" id="upload-advanced-ref">
                 <strong>📋 Fichier de référence (catégories cibles)</strong>
-                <input type="file" id="refFile-adaptive" accept=".xlsx,.xls" />
+                <input type="file" id="refFile-advanced" accept=".xlsx,.xls" />
             </div>
             <div class="parameters">
                 <div class="param-group">
-                    <label>Taille de l'échantillon</label>
-                    <select id="sample-size">
-                        <option value="20">20 réponses</option>
-                        <option value="50" selected>50 réponses</option>
-                        <option value="100">100 réponses</option>
+                    <label>Seuil de correspondance (%)</label>
+                    <input type="range" id="similarity-threshold" min="10" max="80" value="40" 
+                           oninput="document.getElementById('similarity-value').textContent = this.value + '%'">
+                    <span id="similarity-value">40%</span>
+                    <small>Plus bas = plus de correspondances</small>
+                </div>
+                <div class="param-group">
+                    <label>Concepts max par réponse</label>
+                    <select id="max-concepts">
+                        <option value="3" selected>3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
                     </select>
                 </div>
                 <div class="param-group">
-                    <label>Confiance minimale (%)</label>
-                    <input type="range" id="confidence-threshold" min="50" max="90" value="70"
-                           oninput="document.getElementById('confidence-value').textContent = this.value + '%'">
-                    <span id="confidence-value">70%</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- Mode Traduction -->
-        <div id="config-translate" class="config-panel">
-            <h3>🌍 Configuration - Traduction Locale</h3>
-            <div class="file-upload" id="upload-translate-main">
-                <strong>📄 Fichier principal (réponses à traiter)</strong>
-                <input type="file" id="mainFile-translate" accept=".xlsx,.xls" />
-            </div>
-            <div class="file-upload" id="upload-translate-ref">
-                <strong>📋 Fichier de référence (catégories cibles)</strong>
-                <input type="file" id="refFile-translate" accept=".xlsx,.xls" />
-            </div>
-            <div class="parameters">
-                <div class="param-group">
-                    <label>Langue source</label>
-                    <select id="source-language">
-                        <option value="ar">Darija (Dialecte marocain)</option>
-                        <option value="fr">Français</option>
-                        <option value="en">Anglais</option>
-                    </select>
+                    <label>Longueur min des mots</label>
+                    <input type="number" id="min-word-length" value="3" min="2" max="6">
+                    <small>Mots plus courts ignorés</small>
                 </div>
                 <div class="param-group">
-                    <label>Langue cible</label>
-                    <select id="target-language">
-                        <option value="fr" selected>Français</option>
-                        <option value="en">Anglais</option>
-                        <option value="ar">Arabe</option>
+                    <label>Mode d'analyse</label>
+                    <select id="analysis-mode">
+                        <option value="comprehensive" selected>Complet (tous concepts)</option>
+                        <option value="prioritized">Priorisé (concepts principaux)</option>
+                        <option value="balanced">Équilibré (mix)</option>
                     </select>
-                </div>
-                <div class="param-group">
-                    <label>Dictionnaire</label>
-                    <select id="translation-service" disabled>
-                        <option value="local" selected>Dictionnaire intégré (50+ termes)</option>
-                    </select>
-                    <small>Version publique: dictionnaire local uniquement</small>
                 </div>
             </div>
         </div>
 
         <!-- Processing Button -->
         <div style="text-align: center; margin: 30px 0;">
-            <button id="processBtn" class="button" onclick="lancerTraitement()" disabled>
-                🚀 Lancer le Traitement
+            <button id="processBtn" class="button" onclick="lancerAnalyse()" disabled>
+                🚀 Lancer l'Analyse Multi-Concepts
             </button>
         </div>
 
         <!-- Status -->
         <div id="status" class="status info hidden">
-            Prêt à traiter...
+            Prêt à analyser...
         </div>
 
         <!-- Progress Bar -->
         <div id="progressContainer" class="hidden">
-            <h4>Progression du traitement</h4>
+            <h4>Progression de l'analyse</h4>
             <div class="progress-bar">
                 <div id="progressFill" class="progress-fill"></div>
             </div>
             <p id="progressText">Initialisation...</p>
         </div>
 
-        <!-- Learning Interface (Mode Adaptatif) -->
-        <div id="learningInterface" class="learning-interface hidden">
-            <h3>🎓 Interface d'Apprentissage</h3>
-            <p>Validez les correspondances suggérées pour améliorer l'analyse :</p>
-            <div id="learningItems"></div>
-            <div style="text-align: center; margin-top: 20px;">
-                <button class="button" onclick="appliquerApprentissage()">
-                    ✅ Appliquer l'Apprentissage
-                </button>
-            </div>
-        </div>
-
         <!-- Results -->
         <div id="statsContainer" class="hidden">
-            <h3>📊 Statistiques du Traitement</h3>
+            <h3>📊 Statistiques de l'Analyse</h3>
             <div class="stats" id="stats"></div>
         </div>
 
         <div id="examplesContainer" class="hidden">
-            <h3>📝 Exemples de Traitement</h3>
+            <h3>📝 Exemples d'Analyse Multi-Concepts</h3>
             <div class="examples" id="examples"></div>
         </div>
 
         <div id="downloadContainer" class="hidden">
-            <h3>💾 Résultats du Traitement</h3>
+            <h3>💾 Résultats de l'Analyse</h3>
             <div class="action-buttons" id="downloadLinks"></div>
             <div id="tableContainer"></div>
-        </div>
-
-        <!-- Footer -->
-        <div class="footer">
-            <p>
-                <strong>Analyseur de Texte Universel</strong> v2.0.0 - 
-                <a href="https://github.com/votrenom/analyseur-texte-universel" target="_blank">Code source</a> | 
-                <a href="https://github.com/votrenom/analyseur-texte-universel/issues" target="_blank">Support</a> | 
-                <a href="https://github.com/votrenom/analyseur-texte-universel/blob/main/LICENSE" target="_blank">Licence MIT</a>
-            </p>
-            <p>
-                <small>Traitement 100% local - Vos données restent privées | 
-                Créé avec ❤️ pour la communauté open source</small>
-            </p>
         </div>
     </div>
 
     <script>
-        // Configuration pour version publique
-        const PUBLIC_VERSION = true;
-        const MAX_FILE_SIZE = 50 * 1024 * 1024; // 50MB
-        const MAX_PROCESSING_ROWS = 10000; // 10k lignes max
-
         // Variables globales
         let currentMode = null;
         let filesData = {
@@ -676,126 +485,581 @@
             dictionary: null
         };
         let processedData = null;
-        let learningData = null;
 
-        // Système de correspondances intégré étendu pour version publique
-        const builtInCorrespondences = {
-            // Satisfaction/Insatisfaction
-            "ma3tawnich": "Le montant accordé",
-            "montant kaml": "Le montant accordé", 
-            "le montant": "Le montant accordé",
-            "montant": "Le montant accordé",
-            "le crédit": "Le montant accordé",
-            "bghit": "Le montant accordé",
-            "kaml": "Le montant accordé",
-            
-            // Taux et frais
-            "taux d'intérêt": "Frais et taux élevés",
-            "taux tal3": "Frais et taux élevés",
-            "les interet": "Frais et taux élevés",
-            "intérêt": "Frais et taux élevés",
-            "interet": "Frais et taux élevés",
-            "frait dossier": "Frais de dossier",
-            "frais dossier": "Frais de dossier",
-            "les frais": "Frais et taux élevés",
-            "promotions": "Frais et taux élevés",
-            "tal3": "Frais et taux élevés",
-            
-            // Service
-            "service": "Service client peu réactif",
-            "traitement": "Lenteur dans le traitement des dossiers",
-            "lenteur": "Lenteur dans le traitement des dossiers",
-            "retard": "Retard dans le déblocage du crédit",
-            "accueil": "L'accueil en agence",
-            "mauvais traitement": "Mauvais traitement des agents",
-            "agents": "Mauvais traitement des agents",
-            
-            // Processus
-            "processus": "Processus Complexe",
-            "documents": "Trop de documents requis",
-            "papiers": "Trop de documents requis",
-            "signature": "Le passage à l'agence pour la signature",
-            "complexe": "Processus Complexe",
-            
-            // Autres
-            "agence": "Indisponibilité des agences",
-            "passage": "Le passage à l'agence pour la signature",
-            "information": "Manque d'information",
-            "manque d'info": "Manque d'information",
-            "ambiguïté": "Ambiguïté",
-            "date": "La date de prélèvement",
-            "prélèvement": "Retard dans les prélévements des traites",
-            "déblocage": "Retard dans le déblocage du crédit",
-            "assurance": "Problèmes liés à l'assurance",
+        // Classe principale pour l'analyse multi-concepts intelligente
+        class IntelligentMultiConceptAnalyzer {
+            constructor() {
+                // Mots de liaison à ignorer
+                this.stopWords = new Set([
+                    'le', 'la', 'les', 'de', 'du', 'des', 'et', 'ou', 'dans', 'pour', 'avec',
+                    'sans', 'sur', 'par', 'en', 'un', 'une', 'ce', 'cette', 'son', 'sa', 'ses',
+                    'mon', 'ma', 'mes', 'ton', 'ta', 'tes', 'leur', 'leurs', 'notre', 'nos',
+                    'votre', 'vos', 'qui', 'que', 'dont', 'où', 'il', 'elle', 'ils', 'elles',
+                    'je', 'tu', 'nous', 'vous', 'me', 'te', 'se', 'lui', 'eux', 'moi', 'toi',
+                    'est', 'sont', 'était', 'étaient', 'sera', 'seront', 'avoir', 'être',
+                    'très', 'plus', 'moins', 'bien', 'mal', 'pas', 'non', 'oui', 'si', 'ne',
+                    'au', 'aux', 'à', 'ça', 'cela', 'comme', 'donc', 'mais', 'car', 'puis'
+                ]);
+            }
 
-            // Mots courants génériques
-            "qualité": "Problème de qualité",
-            "livraison": "Problème de livraison",
-            "prix": "Prix trop élevé",
-            "rapide": "Rapidité satisfaisante",
-            "lent": "Lenteur du service",
-            "bon": "Satisfaction générale",
-            "mauvais": "Insatisfaction générale",
-            "excellent": "Très satisfait",
-            "nul": "Très insatisfait",
-            "parfait": "Parfaitement satisfait",
-            
-            // Termes darija étendus
-            "zwin": "Bon",
-            "khayb": "Mauvais",
-            "bezzaf": "Beaucoup",
-            "shwiya": "Un peu",
-            "mezyan": "Bon",
-            "ma3endish": "Je n'ai pas",
-            "katb9a": "Ça reste",
-            "mashi": "Pas",
-            "wakha": "Même si",
-            "ila": "Si",
-            "walakin": "Mais"
-        };
+            // Identifier les groupes de concepts dans une phrase
+            identifyConcepts(text) {
+                if (!text || typeof text !== 'string') return [];
+                
+                const cleanText = text.toLowerCase()
+                    .replace(/[^\w\sàáâäçéèêëïíîôöùúûüÿ]/g, ' ')
+                    .replace(/\s+/g, ' ')
+                    .trim();
 
-        // Dictionnaire de traduction darija-français étendu
-        const translationDict = {
-            "ma3tawnich": "ils ne m'ont pas donné",
-            "bghit": "je veux",
-            "kaml": "complet",
-            "tal3": "élevé",
-            "zwin": "bien",
-            "khayb": "mauvais",
-            "bezzaf": "beaucoup",
-            "shwiya": "un peu",
-            "mezyan": "bon",
-            "ma3endish": "je n'ai pas",
-            "katb9a": "ça reste",
-            "mashi": "pas",
-            "wakha": "même si",
-            "ila": "si",
-            "walakin": "mais",
-            "o": "et",
-            "aw": "ou",
-            "f": "dans",
-            "m3a": "avec",
-            "bla": "sans",
-            "kter": "plus",
-            "9lil": "moins",
-            "kbir": "grand",
-            "sghir": "petit",
-            "jdid": "nouveau",
-            "9dim": "ancien",
-            "s3ib": "difficile",
-            "sahel": "facile"
-        };
+                // Diviser en segments potentiels (par connecteurs)
+                const segments = this.segmentText(cleanText);
+                
+                // Analyser chaque segment pour extraire les concepts
+                const concepts = [];
+                segments.forEach(segment => {
+                    const concept = this.extractConceptFromSegment(segment);
+                    if (concept && concept.length > 0) {
+                        concepts.push(concept);
+                    }
+                });
+
+                return concepts;
+            }
+
+            // Segmenter le texte en groupes conceptuels
+            segmentText(text) {
+                // Connecteurs qui indiquent souvent un nouveau concept
+                const connectors = ['et', 'aussi', 'ainsi que', 'de plus', 'en plus', 'par ailleurs', 'également', 'puis', 'ensuite'];
+                
+                let segments = [text];
+                
+                // Diviser par connecteurs
+                connectors.forEach(connector => {
+                    const newSegments = [];
+                    segments.forEach(segment => {
+                        const parts = segment.split(new RegExp(`\\b${connector}\\b`, 'gi'));
+                        parts.forEach((part, index) => {
+                            if (part.trim()) {
+                                newSegments.push(part.trim());
+                            }
+                        });
+                    });
+                    segments = newSegments;
+                });
+
+                // Diviser par ponctuation forte
+                const finalSegments = [];
+                segments.forEach(segment => {
+                    const parts = segment.split(/[;,]/);
+                    parts.forEach(part => {
+                        if (part.trim() && part.trim().length > 3) {
+                            finalSegments.push(part.trim());
+                        }
+                    });
+                });
+
+                return finalSegments.length > 0 ? finalSegments : [text];
+            }
+
+            // Extraire le concept principal d'un segment
+            extractConceptFromSegment(segment) {
+                const words = segment.split(/\s+/)
+                    .filter(word => word.length > 2 && !this.stopWords.has(word));
+
+                if (words.length === 0) return '';
+
+                // Regrouper les mots connexes pour former un concept cohérent
+                return this.buildConcept(words, segment);
+            }
+
+            // Construire un concept cohérent à partir des mots
+            buildConcept(words, originalSegment) {
+                // Chercher des termes clés spécifiques
+                const keyTerms = this.identifyKeyTerms(words, originalSegment);
+                
+                if (keyTerms.length > 0) {
+                    return keyTerms.join(' ');
+                }
+
+                // Sinon, prendre les mots les plus significatifs
+                return words.slice(0, Math.min(4, words.length)).join(' ');
+            }
+
+            // Identifier les termes clés dans un contexte
+            identifyKeyTerms(words, context) {
+                const keyTermPatterns = [
+                    // Service et accueil
+                    { pattern: ['accueil'], concept: 'accueil' },
+                    { pattern: ['service'], concept: 'service' },
+                    { pattern: ['comportement', 'agents'], concept: 'comportement des agents' },
+                    { pattern: ['traitement', 'agents'], concept: 'traitement des agents' },
+                    
+                    // Rapidité et temps
+                    { pattern: ['rapidité'], concept: 'rapidité' },
+                    { pattern: ['rapide'], concept: 'rapidité' },
+                    { pattern: ['lenteur'], concept: 'lenteur' },
+                    { pattern: ['lent'], concept: 'lenteur' },
+                    { pattern: ['temps'], concept: 'temps de traitement' },
+                    { pattern: ['délai'], concept: 'délai' },
+                    
+                    // Traitement et processus
+                    { pattern: ['traitement', 'dossier'], concept: 'traitement des dossiers' },
+                    { pattern: ['traitement', 'crédit'], concept: 'traitement des crédits' },
+                    { pattern: ['processus'], concept: 'processus' },
+                    { pattern: ['procédure'], concept: 'procédures' },
+                    
+                    // Montant et finance
+                    { pattern: ['montant'], concept: 'montant' },
+                    { pattern: ['crédit'], concept: 'crédit' },
+                    { pattern: ['frais'], concept: 'frais' },
+                    { pattern: ['taux'], concept: 'taux' },
+                    { pattern: ['intérêt'], concept: 'taux d\'intérêt' },
+                    
+                    // Documents et formalités
+                    { pattern: ['documents'], concept: 'documents' },
+                    { pattern: ['papiers'], concept: 'documents' },
+                    { pattern: ['signature'], concept: 'signature' },
+                    { pattern: ['formalités'], concept: 'formalités' },
+                    
+                    // Satisfaction
+                    { pattern: ['satisfait'], concept: 'satisfaction' },
+                    { pattern: ['content'], concept: 'satisfaction' },
+                    { pattern: ['bon'], concept: 'satisfaction' },
+                    { pattern: ['bien'], concept: 'satisfaction' },
+                    { pattern: ['excellent'], concept: 'très satisfait' },
+                    { pattern: ['parfait'], concept: 'parfait' },
+                    { pattern: ['mauvais'], concept: 'insatisfaction' },
+                    { pattern: ['nul'], concept: 'très insatisfait' }
+                ];
+
+                const identifiedTerms = [];
+                const contextLower = context.toLowerCase();
+
+                keyTermPatterns.forEach(({ pattern, concept }) => {
+                    const hasAllTerms = pattern.every(term => 
+                        words.some(word => word.includes(term)) || contextLower.includes(term)
+                    );
+                    
+                    if (hasAllTerms) {
+                        identifiedTerms.push(concept);
+                    }
+                });
+
+                return [...new Set(identifiedTerms)]; // Supprimer les doublons
+            }
+
+            // Traduire complètement en français
+            translateConcept(concept) {
+                if (!concept || concept.trim() === '') return '';
+                
+                // Dictionnaire complet darija → français
+                const darijaToFrench = {
+                    // Mots courants
+                    'mossa3ada': 'aide',
+                    'mosa3ada': 'aide',
+                    'ta3awon': 'assistance',
+                    'ta3aoun': 'coopération',
+                    'dyalhom': 'leur',
+                    'dyali': 'mon',
+                    'dyalk': 'ton',
+                    'souhola': 'facilité',
+                    'sahl': 'facile',
+                    'sahla': 'facile',
+                    'ijra2at': 'procédures',
+                    'ijraat': 'procédures',
+                    'jira2at': 'procédures',
+                    
+                    // Service et qualité
+                    'khedma': 'service',
+                    'khdema': 'service',
+                    'khidma': 'service',
+                    'ta3aml': 'traitement',
+                    'ta3amul': 'comportement',
+                    'mou3amala': 'traitement',
+                    'mo3amala': 'traitement',
+                    'istiqbal': 'accueil',
+                    'marr7aba': 'accueil',
+                    
+                    // Satisfaction/Qualité
+                    'zwin': 'bon',
+                    'zwina': 'bonne',
+                    'mezyan': 'bon',
+                    'mezyana': 'bonne',
+                    'mliha': 'bien',
+                    'mli7': 'bien',
+                    'khayb': 'mauvais',
+                    'khayba': 'mauvaise',
+                    'mabsout': 'satisfait',
+                    'mabsouta': 'satisfaite',
+                    'farhan': 'content',
+                    'far7ana': 'contente',
+                    
+                    // Rapidité et temps
+                    'sari3': 'rapide',
+                    'sari3a': 'rapide',
+                    'b3ida': 'lent',
+                    'b3da': 'lentement',
+                    'deghayin': 'rapidement',
+                    'fissa': 'vite',
+                    'waqt': 'temps',
+                    'toul': 'durée',
+                    'qsir': 'court',
+                    'tawil': 'long',
+                    
+                    // Argent et montants
+                    'flous': 'argent',
+                    'dar7am': 'dirham',
+                    'darham': 'dirham',
+                    'mablagh': 'montant',
+                    'thaman': 'prix',
+                    'khllas': 'payé',
+                    'dfa3': 'payé',
+                    'ma3tawnich': 'ne m\'ont pas donné',
+                    'ma3tani': 'ne m\'a pas donné',
+                    'bghit': 'je veux',
+                    'bghina': 'nous voulons',
+                    
+                    // Quantité
+                    'kaml': 'complet',
+                    'kamla': 'complète',
+                    'tal3': 'élevé',
+                    'tal3a': 'élevée',
+                    'nzel': 'bas',
+                    'nzela': 'basse',
+                    'bezzaf': 'beaucoup',
+                    'bzaf': 'beaucoup',
+                    'shwiya': 'un peu',
+                    'qalil': 'peu',
+                    'ktir': 'beaucoup',
+                    
+                    // Disponibilité et accès
+                    'mo3amala': 'transaction',
+                    'mzyana': 'bonne',
+                    'mzyan': 'bon',
+                    'istikbal': 'réception',
+                    'la9bal': 'acceptation',
+                    'lacceptation': 'acceptation',
+                    'disponibilité': 'disponibilité',
+                    'disponibiliter': 'disponibilité',
+                    'mo3amala': 'traitement',
+                    
+                    // Crédit et finance
+                    'crédit': 'crédit',
+                    'credit': 'crédit',
+                    'qard': 'prêt',
+                    'tamwil': 'financement',
+                    'fawa2id': 'intérêts',
+                    'riba': 'intérêt',
+                    
+                    // Négation et connecteurs
+                    'mashi': 'pas',
+                    'makanch': 'il n\'y avait pas',
+                    'makainch': 'il n\'y a pas',
+                    'ma3endish': 'je n\'ai pas',
+                    '3andi': 'j\'ai',
+                    'wakha': 'même si',
+                    'walakin': 'mais',
+                    'li2anna': 'parce que',
+                    
+                    // Institutions
+                    'bank': 'banque',
+                    'banka': 'banque',
+                    'societe': 'société',
+                    'cherka': 'entreprise',
+                    'mo2assasa': 'institution',
+                    'ida9a': 'administration',
+                    'maktab': 'bureau',
+                    
+                    // Agents et personnel
+                    'agents': 'agents',
+                    'agent': 'agent',
+                    'mowadaf': 'employé',
+                    'mowadafa': 'employée',
+                    'mowadafin': 'employés',
+                    'mas2oul': 'responsable',
+                    'mas2oula': 'responsable',
+                    
+                    // Processus et documents
+                    'waraq': 'papier',
+                    'awraq': 'papiers',
+                    'watha2iq': 'documents',
+                    'wathiqa': 'document',
+                    'tawqi3': 'signature',
+                    'ijra2at': 'procédures',
+                    'marahil': 'étapes',
+                    'mar7ala': 'étape'
+                };
+
+                let translatedText = concept.toLowerCase();
+                
+                // Appliquer les traductions mot par mot
+                Object.entries(darijaToFrench).forEach(([darija, french]) => {
+                    // Remplacer les mots entiers
+                    const regex = new RegExp(`\\b${darija}\\b`, 'gi');
+                    translatedText = translatedText.replace(regex, french);
+                });
+                
+                // Nettoyer et standardiser
+                translatedText = translatedText
+                    .replace(/\s+/g, ' ')
+                    .trim()
+                    .replace(/^(le|la|les|du|des|de)\s+/i, '') // Enlever articles en début
+                    .replace(/\s+(le|la|les|du|des|de)$/i, ''); // Enlever articles en fin
+
+                // Si pas de traduction significative, retourner une interprétation
+                if (translatedText === concept.toLowerCase() || translatedText.length < 2) {
+                    return this.interpretConcept(concept);
+                }
+
+                return this.capitalizeFirst(translatedText);
+            }
+
+            // Interpréter un concept non traduit
+            interpretConcept(concept) {
+                const interpretations = {
+                    // Patterns de concepts
+                    'comportement': 'comportement du personnel',
+                    'agent': 'service des agents',
+                    'accueil': 'qualité d\'accueil',
+                    'rapid': 'rapidité du service',
+                    'lent': 'lenteur du processus',
+                    'temps': 'délai de traitement',
+                    'document': 'gestion des documents',
+                    'signature': 'processus de signature',
+                    'montant': 'montant du crédit',
+                    'crédit': 'produit crédit',
+                    'banque': 'service bancaire',
+                    'satisf': 'niveau de satisfaction',
+                    'problème': 'problème rencontré'
+                };
+
+                const lowerConcept = concept.toLowerCase();
+                
+                for (const [key, interpretation] of Object.entries(interpretations)) {
+                    if (lowerConcept.includes(key)) {
+                        return interpretation;
+                    }
+                }
+                
+                return concept; // Retourner tel quel si pas d'interprétation
+            }
+
+            // Capitaliser la première lettre
+            capitalizeFirst(text) {
+                if (!text) return text;
+                return text.charAt(0).toUpperCase() + text.slice(1);
+            }
+
+            // Matcher un concept avec la liste de référence (amélioré)
+            matchWithReference(concept, referenceCategories, threshold = 0.4) {
+                if (!concept || !referenceCategories.length) return null;
+
+                // Nettoyer le concept pour la comparaison
+                const cleanConcept = concept.toLowerCase().trim();
+                
+                let bestMatch = null;
+                let bestScore = 0;
+
+                referenceCategories.forEach(category => {
+                    const cleanCategory = category.toLowerCase().trim();
+                    
+                    // 1. Correspondance exacte (priorité haute)
+                    if (cleanConcept === cleanCategory) {
+                        bestMatch = {
+                            category: category,
+                            score: 1.0,
+                            matchType: 'exact'
+                        };
+                        return;
+                    }
+                    
+                    // 2. Correspondance par inclusion (priorité moyenne)
+                    if (cleanConcept.includes(cleanCategory) || cleanCategory.includes(cleanConcept)) {
+                        const score = 0.9;
+                        if (score > bestScore) {
+                            bestScore = score;
+                            bestMatch = {
+                                category: category,
+                                score: score,
+                                matchType: 'inclusion'
+                            };
+                        }
+                    }
+                    
+                    // 3. Correspondance sémantique (priorité normale)
+                    const semanticScore = this.calculateSemanticSimilarity(cleanConcept, cleanCategory);
+                    if (semanticScore > bestScore && semanticScore >= threshold) {
+                        bestScore = semanticScore;
+                        bestMatch = {
+                            category: category,
+                            score: semanticScore,
+                            matchType: 'semantic'
+                        };
+                    }
+                });
+
+                return bestMatch;
+            }
+
+            // Calculer la similarité sémantique
+            calculateSemanticSimilarity(text1, text2) {
+                if (!text1 || !text2) return 0;
+
+                const words1 = this.extractKeywords(text1);
+                const words2 = this.extractKeywords(text2);
+                
+                if (words1.length === 0 || words2.length === 0) return 0;
+
+                // Correspondances exactes
+                const exactMatches = words1.filter(w1 => 
+                    words2.some(w2 => this.normalizeWord(w1) === this.normalizeWord(w2))
+                ).length;
+
+                // Correspondances partielles
+                let partialMatches = 0;
+                words1.forEach(w1 => {
+                    words2.forEach(w2 => {
+                        if (this.isPartialMatch(w1, w2)) {
+                            partialMatches += 0.5;
+                        }
+                    });
+                });
+
+                const totalWords = Math.max(words1.length, words2.length);
+                return (exactMatches + partialMatches) / totalWords;
+            }
+
+            // Extraire les mots-clés
+            extractKeywords(text) {
+                if (!text) return [];
+                
+                return text.toLowerCase()
+                    .replace(/[^\w\s]/g, ' ')
+                    .split(/\s+/)
+                    .filter(word => 
+                        word.length > 2 && 
+                        !this.stopWords.has(word) &&
+                        !this.isNumber(word)
+                    );
+            }
+
+            // Normaliser un mot
+            normalizeWord(word) {
+                return word
+                    .normalize('NFD')
+                    .replace(/[\u0300-\u036f]/g, '')
+                    .replace(/s$/, '')
+                    .replace(/x$/, '')
+                    .toLowerCase();
+            }
+
+            // Vérifier si c'est un nombre
+            isNumber(str) {
+                return !isNaN(str) && !isNaN(parseFloat(str));
+            }
+
+            // Vérifier correspondance partielle
+            isPartialMatch(word1, word2) {
+                if (word1.length < 3 || word2.length < 3) return false;
+                
+                const norm1 = this.normalizeWord(word1);
+                const norm2 = this.normalizeWord(word2);
+                
+                // Si un mot contient l'autre
+                if (norm1.includes(norm2) || norm2.includes(norm1)) return true;
+                
+                // Distance de Levenshtein
+                const distance = this.levenshteinDistance(norm1, norm2);
+                const maxLength = Math.max(norm1.length, norm2.length);
+                const similarity = 1 - (distance / maxLength);
+                
+                return similarity >= 0.7;
+            }
+
+            // Distance de Levenshtein
+            levenshteinDistance(str1, str2) {
+                const matrix = Array(str2.length + 1).fill().map(() => Array(str1.length + 1).fill(0));
+                
+                for (let i = 0; i <= str1.length; i++) matrix[0][i] = i;
+                for (let j = 0; j <= str2.length; j++) matrix[j][0] = j;
+                
+                for (let j = 1; j <= str2.length; j++) {
+                    for (let i = 1; i <= str1.length; i++) {
+                        const cost = str1[i - 1] === str2[j - 1] ? 0 : 1;
+                        matrix[j][i] = Math.min(
+                            matrix[j - 1][i] + 1,
+                            matrix[j][i - 1] + 1,
+                            matrix[j - 1][i - 1] + cost
+                        );
+                    }
+                }
+                
+                return matrix[str2.length][str1.length];
+            }
+
+            // Analyser une réponse complète avec traduction française et matching intelligent
+            analyzeResponse(responseText, referenceCategories, maxConcepts = 3, threshold = 0.4) {
+                const concepts = this.identifyConcepts(responseText);
+                const results = {
+                    matchedCategories: [],
+                    unmatchedConcepts: [],
+                    translatedText: ''
+                };
+
+                const processedConcepts = [];
+
+                concepts.forEach(concept => {
+                    if (results.matchedCategories.length >= maxConcepts) return;
+                    
+                    // 1. Traduire le concept en français
+                    const frenchConcept = this.translateConcept(concept);
+                    
+                    // 2. Essayer de matcher avec la liste de référence (concept original)
+                    let match = this.matchWithReference(concept, referenceCategories, threshold);
+                    
+                    // 3. Si pas de match, essayer avec la traduction française
+                    if (!match && frenchConcept !== concept) {
+                        match = this.matchWithReference(frenchConcept, referenceCategories, threshold);
+                    }
+                    
+                    // 4. Traitement du résultat
+                    if (match) {
+                        // Match trouvé dans la liste de référence
+                        if (!results.matchedCategories.includes(match.category)) {
+                            results.matchedCategories.push(match.category);
+                        }
+                    } else {
+                        // Pas de match : garder la traduction française
+                        if (frenchConcept && frenchConcept.trim() !== '') {
+                            // Vérifier que ce n'est pas un doublon sémantique
+                            const isDuplicate = processedConcepts.some(processed => 
+                                this.calculateSemanticSimilarity(frenchConcept, processed) > 0.8
+                            );
+                            
+                            if (!isDuplicate) {
+                                results.unmatchedConcepts.push(frenchConcept);
+                                processedConcepts.push(frenchConcept);
+                            }
+                        }
+                    }
+                });
+
+                // Créer la traduction IA finale
+                if (results.unmatchedConcepts.length > 0) {
+                    results.translatedText = results.unmatchedConcepts
+                        .filter(concept => concept && concept.trim() !== '')
+                        .join(' | '); // Séparer par | pour clarté
+                }
+
+                return results;
+            }
+        }
 
         // Initialisation
         document.addEventListener('DOMContentLoaded', function() {
             setupEventListeners();
             updateProjectTitle();
-            showWelcomeMessage();
         });
-
-        function showWelcomeMessage() {
-            updateStatus('👋 Bienvenue! Sélectionnez un mode de traitement pour commencer.', 'info');
-        }
 
         function setupEventListeners() {
             // Mode selection
@@ -805,8 +1069,8 @@
                 });
             });
 
-            // File uploads pour chaque mode
-            const modes = ['auto', 'custom', 'adaptive', 'translate'];
+            // File uploads
+            const modes = ['intelligent', 'hybrid', 'advanced'];
             modes.forEach(mode => {
                 const mainFileInput = document.getElementById(`mainFile-${mode}`);
                 const refFileInput = document.getElementById(`refFile-${mode}`);
@@ -824,44 +1088,39 @@
                 }
             });
 
-            // Dictionnaire pour mode personnalisé
-            const dictFileInput = document.getElementById('dictFile-custom');
+            // Dictionnaire pour mode hybride
+            const dictFileInput = document.getElementById('dictFile-hybrid');
             if (dictFileInput) {
                 dictFileInput.addEventListener('change', function(e) {
-                    handleFileUpload(e, 'dictionary', 'custom');
+                    handleFileUpload(e, 'dictionary', 'hybrid');
                 });
             }
 
-            // Projet title
             document.getElementById('projectTitle').addEventListener('input', updateProjectTitle);
         }
 
         function selectMode(mode) {
             currentMode = mode;
             
-            // Update visual selection
             document.querySelectorAll('.mode-card').forEach(card => {
                 card.classList.remove('selected');
             });
             document.querySelector(`[data-mode="${mode}"]`).classList.add('selected');
             
-            // Show appropriate config panel
             document.querySelectorAll('.config-panel').forEach(panel => {
                 panel.classList.remove('active');
             });
             document.getElementById(`config-${mode}`).classList.add('active');
             
-            // Reset files and button state
             resetFilesAndButton();
             updateStatus('Mode sélectionné: ' + getModeDisplayName(mode), 'info');
         }
 
         function getModeDisplayName(mode) {
             const names = {
-                'auto': 'Correspondances Automatiques',
-                'custom': 'Base Personnalisée',
-                'adaptive': 'Apprentissage Adaptatif',
-                'translate': 'Traduction Locale'
+                'intelligent': 'Analyse Multi-Concepts',
+                'hybrid': 'Mode Hybride',
+                'advanced': 'Analyse Personnalisée'
             };
             return names[mode] || mode;
         }
@@ -870,18 +1129,10 @@
             const file = event.target.files[0];
             if (!file) return;
 
-            // Vérification de la taille du fichier
-            if (PUBLIC_VERSION && file.size > MAX_FILE_SIZE) {
-                alert(`❌ Fichier trop volumineux! Maximum ${MAX_FILE_SIZE / (1024*1024)}MB autorisé.`);
-                event.target.value = '';
-                return;
-            }
-
             const reader = new FileReader();
             reader.onload = function(e) {
                 filesData[fileType] = new Uint8Array(e.target.result);
                 
-                // Update UI
                 const uploadDiv = event.target.closest('.file-upload');
                 uploadDiv.classList.add('file-uploaded');
                 
@@ -903,12 +1154,11 @@
             let ready = false;
 
             switch(currentMode) {
-                case 'auto':
-                case 'adaptive':
-                case 'translate':
+                case 'intelligent':
+                case 'advanced':
                     ready = filesData.main && filesData.reference;
                     break;
-                case 'custom':
+                case 'hybrid':
                     ready = filesData.main && filesData.reference && filesData.dictionary;
                     break;
             }
@@ -916,7 +1166,7 @@
             processBtn.disabled = !ready;
             
             if (ready) {
-                updateStatus('✅ Fichiers chargés! Prêt pour le traitement.', 'success');
+                updateStatus('✅ Fichiers chargés! Prêt pour l\'analyse multi-concepts.', 'success');
             }
         }
 
@@ -940,90 +1190,83 @@
         function updateProjectTitle() {
             const title = document.getElementById('projectTitle').value;
             if (title) {
-                document.querySelector('.header h1').textContent = `🔄 ${title}`;
+                document.querySelector('.header h1').textContent = `🧠 ${title}`;
             } else {
-                document.querySelector('.header h1').textContent = '🔄 Analyseur de Texte Universel';
+                document.querySelector('.header h1').textContent = '🧠 Analyseur de Texte Intelligent';
             }
         }
 
-        // Fonctions de traitement principal avec limitations version publique
-        async function lancerTraitement() {
+        // Fonction principale d'analyse
+        async function lancerAnalyse() {
             if (!currentMode || !filesData.main || !filesData.reference) {
                 updateStatus('❌ Veuillez sélectionner un mode et charger les fichiers requis.', 'error');
                 return;
             }
 
             try {
-                updateStatus('🔄 Démarrage du traitement...', 'info');
+                updateStatus('🧠 Démarrage de l\'analyse multi-concepts...', 'info');
                 updateProgress(0, 'Initialisation...');
 
                 // Lire les fichiers
                 updateProgress(10, 'Lecture des fichiers...');
                 const mainData = await readExcelFile(filesData.main);
-                
-                // Vérification des limitations version publique
-                if (PUBLIC_VERSION && mainData.length > MAX_PROCESSING_ROWS) {
-                    updateStatus(`❌ Trop de lignes! Maximum ${MAX_PROCESSING_ROWS} lignes autorisé en version publique.`, 'error');
-                    return;
-                }
-
                 const refData = await readExcelFile(filesData.reference);
-                let dictData = null;
-                
-                if (currentMode === 'custom' && filesData.dictionary) {
-                    dictData = await readExcelFile(filesData.dictionary);
-                }
 
                 updateProgress(20, 'Analyse de la structure des données...');
                 
-                // Détecter les colonnes automatiquement
+                // Détecter les colonnes
                 const mainColumns = Object.keys(mainData[0]);
                 const responseColumn = detectResponseColumn(mainData[0]);
-                const idColumn = mainColumns[0]; // Première colonne = ID
+                const idColumn = mainColumns[0];
                 
                 // Extraire les catégories de référence
                 const refColumns = Object.keys(refData[0]);
                 const categoryColumn = refColumns.find(col => 
                     col.toLowerCase().includes('raison') || 
                     col.toLowerCase().includes('catégorie') ||
-                    col.toLowerCase().includes('motif')
+                    col.toLowerCase().includes('motif') ||
+                    col.toLowerCase().includes('satisfaction') ||
+                    col.toLowerCase().includes('aspect')
                 ) || refColumns[0];
                 
-                const referenceCategories = refData.map(row => row[categoryColumn]).filter(cat => cat && cat.toString().trim());
+                const referenceCategories = refData.map(row => row[categoryColumn])
+                    .filter(cat => cat && cat.toString().trim())
+                    .map(cat => cat.toString().trim());
 
-                updateProgress(30, 'Préparation du système d\'analyse...');
+                const uniqueCategories = [...new Set(referenceCategories)];
+                updateProgress(30, `${uniqueCategories.length} catégories de référence détectées...`);
 
-                let correspondences = {};
                 let processedResults = [];
 
-                // Traitement selon le mode sélectionné
+                // Traitement selon le mode
                 switch(currentMode) {
-                    case 'auto':
-                        correspondences = await generateAutomaticCorrespondences(mainData, referenceCategories, responseColumn);
-                        processedResults = await processWithCorrespondences(mainData, correspondences, responseColumn, idColumn);
+                    case 'intelligent':
+                        processedResults = await processWithIntelligentAnalysis(
+                            mainData, uniqueCategories, responseColumn, idColumn
+                        );
                         break;
                         
-                    case 'custom':
-                        correspondences = await loadCustomCorrespondences(dictData);
-                        processedResults = await processWithCorrespondences(mainData, correspondences, responseColumn, idColumn);
+                    case 'hybrid':
+                        const dictData = await readExcelFile(filesData.dictionary);
+                        processedResults = await processWithHybridAnalysis(
+                            mainData, uniqueCategories, dictData, responseColumn, idColumn
+                        );
                         break;
                         
-                    case 'adaptive':
-                        return await processAdaptiveMode(mainData, referenceCategories, responseColumn, idColumn);
-                        
-                    case 'translate':
-                        correspondences = await generateTranslationCorrespondences(mainData, referenceCategories, responseColumn);
-                        processedResults = await processWithCorrespondences(mainData, correspondences, responseColumn, idColumn);
+                    case 'advanced':
+                        processedResults = await processWithAdvancedAnalysis(
+                            mainData, uniqueCategories, responseColumn, idColumn
+                        );
                         break;
                 }
 
-                updateProgress(90, 'Finalisation...');
+                updateProgress(90, 'Finalisation des résultats...');
                 await finalizeResults(processedResults, mainData, responseColumn);
-                updateProgress(100, 'Traitement terminé!');
+                updateProgress(100, 'Analyse multi-concepts terminée!');
 
             } catch (error) {
                 updateStatus(`❌ Erreur: ${error.message}`, 'error');
-                console.error('Erreur de traitement:', error);
+                console.error('Erreur d\'analyse:', error);
             }
         }
 
@@ -1037,8 +1280,7 @@
         function detectResponseColumn(firstRow) {
             const columns = Object.keys(firstRow);
             
-            // Chercher des colonnes avec des mots-clés spécifiques
-            const keywords = ['réponse', 'motif', 'raison', 'commentaire', 'quels', 'pourquoi', 'insatisfait'];
+            const keywords = ['réponse', 'motif', 'raison', 'commentaire', 'quels', 'pourquoi', 'insatisfait', 'satisfait', 'texte', 'avis'];
             
             for (const keyword of keywords) {
                 const found = columns.find(col => 
@@ -1047,349 +1289,197 @@
                 if (found) return found;
             }
             
-            // Sinon, prendre la deuxième colonne (après l'ID)
             return columns[1] || columns[0];
         }
 
-        // Reste du code JavaScript identique à la version complète...
-        // (inclure toutes les autres fonctions)
-
-        // Mode 1: Correspondances Automatiques
-        async function generateAutomaticCorrespondences(mainData, referenceCategories, responseColumn) {
-            updateProgress(40, 'Génération des correspondances automatiques...');
-            
-            const threshold = parseInt(document.getElementById('similarity-threshold').value) / 100;
-            const minWordLength = parseInt(document.getElementById('min-word-length').value);
-            
-            // Extraire tous les mots des réponses
-            const allWords = new Set();
-            mainData.forEach(row => {
-                const response = row[responseColumn];
-                if (response) {
-                    const words = response.toString().toLowerCase()
-                        .split(/[\s,.-]+/)
-                        .filter(word => word.length >= minWordLength);
-                    words.forEach(word => allWords.add(word));
-                }
-            });
-
-            const correspondences = { ...builtInCorrespondences };
-            
-            // Générer des correspondances automatiques
-            for (const word of allWords) {
-                if (!correspondences[word]) {
-                    const bestMatch = findBestCategoryMatch(word, referenceCategories, threshold);
-                    if (bestMatch) {
-                        correspondences[word] = bestMatch;
-                    }
-                }
-            }
-
-            updateProgress(60, 'Correspondances générées...');
-            return correspondences;
-        }
-
-        function findBestCategoryMatch(word, categories, threshold) {
-            let bestMatch = null;
-            let bestScore = 0;
-
-            for (const category of categories) {
-                const score = calculateSimilarity(word, category.toLowerCase());
-                if (score > bestScore && score >= threshold) {
-                    bestScore = score;
-                    bestMatch = category;
-                }
-            }
-
-            return bestMatch;
-        }
-
-        function calculateSimilarity(str1, str2) {
-            // Algorithme de similarité simple basé sur les caractères communs
-            const set1 = new Set(str1.toLowerCase());
-            const set2 = new Set(str2.toLowerCase());
-            const intersection = new Set([...set1].filter(x => set2.has(x)));
-            const union = new Set([...set1, ...set2]);
-            return intersection.size / union.size;
-        }
-
-        // Mode 2: Base Personnalisée
-        async function loadCustomCorrespondences(dictData) {
-            updateProgress(40, 'Chargement du dictionnaire personnalisé...');
-            
-            const correspondences = {};
-            const columns = Object.keys(dictData[0]);
-            const sourceCol = columns[0]; // Première colonne = termes source
-            const targetCol = columns[1]; // Deuxième colonne = catégories cibles
-            
-            dictData.forEach(row => {
-                const source = row[sourceCol];
-                const target = row[targetCol];
-                if (source && target) {
-                    correspondences[source.toString().toLowerCase().trim()] = target.toString().trim();
-                }
-            });
-
-            updateProgress(60, 'Dictionnaire chargé...');
-            return correspondences;
-        }
-
-        // Mode 3: Apprentissage Adaptatif
-        async function processAdaptiveMode(mainData, referenceCategories, responseColumn, idColumn) {
-            updateProgress(40, 'Préparation de l\'échantillon d\'apprentissage...');
-            
-            const sampleSize = parseInt(document.getElementById('sample-size').value);
-            const sample = mainData.slice(0, sampleSize);
-            
-            // Générer des suggestions initiales
-            const initialCorrespondences = { ...builtInCorrespondences };
-            
-            learningData = {
-                sample: sample,
-                correspondences: initialCorrespondences,
-                referenceCategories: referenceCategories,
-                responseColumn: responseColumn,
-                idColumn: idColumn,
-                fullData: mainData
-            };
-
-            updateProgress(60, 'Génération des suggestions...');
-            await displayLearningInterface(sample, responseColumn, idColumn, referenceCategories);
-            
-            updateProgress(70, 'Interface d\'apprentissage prête');
-            updateStatus('🎓 Veuillez valider les correspondances dans l\'interface d\'apprentissage ci-dessous.', 'info');
-        }
-
-        async function displayLearningInterface(sample, responseColumn, idColumn, referenceCategories) {
-            const learningInterface = document.getElementById('learningInterface');
-            const learningItems = document.getElementById('learningItems');
-            
-            learningItems.innerHTML = '';
-            
-            sample.forEach((row, index) => {
-                const response = row[responseColumn];
-                if (!response || response.toString().trim() === '') return;
-                
-                const suggestions = analyzeResponseForLearning(response, referenceCategories);
-                
-                const itemDiv = document.createElement('div');
-                itemDiv.className = 'sample-item';
-                itemDiv.innerHTML = `
-                    <div class="sample-response">ID ${row[idColumn]}: "${response}"</div>
-                    <div>Catégories suggérées:</div>
-                    <div class="suggested-categories" data-response-index="${index}">
-                        ${suggestions.map(cat => 
-                            `<span class="category-tag" onclick="toggleCategory(this)">${cat}</span>`
-                        ).join('')}
-                    </div>
-                    <div style="margin-top: 10px;">
-                        <input type="text" placeholder="Ajouter une nouvelle catégorie..." 
-                               onkeypress="if(event.key==='Enter') addNewCategory(this, ${index})"
-                               style="width: 100%; padding: 5px; border: 1px solid #ccc; border-radius: 4px;">
-                    </div>
-                `;
-                
-                learningItems.appendChild(itemDiv);
-            });
-            
-            learningInterface.classList.remove('hidden');
-        }
-
-        function analyzeResponseForLearning(response, referenceCategories) {
-            const responseText = response.toString().toLowerCase();
-            const suggestions = [];
-            
-            // Utiliser les correspondances intégrées
-            for (const [keyword, category] of Object.entries(builtInCorrespondences)) {
-                if (responseText.includes(keyword.toLowerCase())) {
-                    if (referenceCategories.includes(category) && !suggestions.includes(category)) {
-                        suggestions.push(category);
-                    }
-                }
-            }
-            
-            // Si aucune suggestion, proposer "Non identifié"
-            if (suggestions.length === 0) {
-                suggestions.push("Non identifié");
-            }
-            
-            return suggestions.slice(0, 3); // Maximum 3 suggestions
-        }
-
-        function toggleCategory(element) {
-            element.classList.toggle('rejected');
-        }
-
-        function addNewCategory(input, responseIndex) {
-            const newCategory = input.value.trim();
-            if (!newCategory) return;
-            
-            const container = input.parentElement.previousElementSibling;
-            const newTag = document.createElement('span');
-            newTag.className = 'category-tag';
-            newTag.textContent = newCategory;
-            newTag.onclick = function() { toggleCategory(this); };
-            
-            container.appendChild(newTag);
-            input.value = '';
-        }
-
-        async function appliquerApprentissage() {
-            updateProgress(70, 'Application de l\'apprentissage...');
-            
-            // Collecter les correspondances validées
-            const validatedCorrespondences = { ...learningData.correspondences };
-            
-            document.querySelectorAll('.sample-item').forEach((item, index) => {
-                const responseElement = item.querySelector('.sample-response');
-                const response = responseElement.textContent.split(': "')[1].slice(0, -1); // Extraire la réponse
-                
-                const validCategories = [];
-                item.querySelectorAll('.category-tag:not(.rejected)').forEach(tag => {
-                    validCategories.push(tag.textContent);
-                });
-                
-                // Créer des correspondances basées sur les mots-clés de la réponse
-                const words = response.toLowerCase().split(/[\s,.-]+/).filter(w => w.length > 2);
-                words.forEach(word => {
-                    if (validCategories.length > 0) {
-                        validatedCorrespondences[word] = validCategories[0]; // Prendre la première catégorie valide
-                    }
-                });
-            });
-            
-            // Appliquer sur toutes les données
-            const processedResults = await processWithCorrespondences(
-                learningData.fullData, 
-                validatedCorrespondences, 
-                learningData.responseColumn, 
-                learningData.idColumn
-            );
-            
-            document.getElementById('learningInterface').classList.add('hidden');
-            await finalizeResults(processedResults, learningData.fullData, learningData.responseColumn);
-            updateProgress(100, 'Apprentissage appliqué avec succès!');
-        }
-
-        // Mode 4: Traduction Automatique
-        async function generateTranslationCorrespondences(mainData, referenceCategories, responseColumn) {
-            updateProgress(40, 'Traduction des réponses...');
-            
-            const correspondences = {};
-            
-            // Extraire les mots uniques
-            const uniqueWords = new Set();
-            mainData.forEach(row => {
-                const response = row[responseColumn];
-                if (response) {
-                    const words = response.toString().toLowerCase().split(/[\s,.-]+/);
-                    words.forEach(word => {
-                        if (word.length > 2) uniqueWords.add(word);
-                    });
-                }
-            });
-            
-            // Traduire chaque mot
-            for (const word of uniqueWords) {
-                const translated = translateWord(word);
-                if (translated !== word) {
-                    const bestMatch = findBestCategoryMatch(translated, referenceCategories, 0.3);
-                    if (bestMatch) {
-                        correspondences[word] = bestMatch;
-                    }
-                }
-            }
-            
-            // Ajouter les correspondances intégrées
-            Object.assign(correspondences, builtInCorrespondences);
-            
-            updateProgress(60, 'Traductions générées...');
-            return correspondences;
-        }
-
-        function translateWord(word) {
-            // Traduction simple basée sur le dictionnaire intégré
-            const lowerWord = word.toLowerCase();
-            return translationDict[lowerWord] || word;
-        }
-
-        // Traitement avec correspondances
-        async function processWithCorrespondences(mainData, correspondences, responseColumn, idColumn) {
-            updateProgress(70, 'Application des correspondances...');
-            
-            const maxMatches = currentMode === 'auto' ? parseInt(document.getElementById('max-matches').value) : 2;
+        // Analyse intelligente sans dictionnaire
+        async function processWithIntelligentAnalysis(mainData, referenceCategories, responseColumn, idColumn) {
+            const analyzer = new IntelligentMultiConceptAnalyzer();
             const results = [];
+            
+            updateProgress(40, 'Analyse multi-concepts en cours...');
             
             mainData.forEach((row, index) => {
                 const response = row[responseColumn];
                 const processedRow = { ...row };
                 
-                // Ajouter les colonnes de résultats
-                for (let i = 1; i <= maxMatches; i++) {
-                    processedRow[`Catégorie ${i}`] = '';
-                }
+                // Initialiser les colonnes de résultats
+                processedRow['Catégorie 1'] = '';
+                processedRow['Catégorie 2'] = '';
+                processedRow['Catégorie 3'] = '';
+                processedRow['Traduction IA'] = '';
                 
                 if (response && response.toString().trim() !== '') {
-                    const categories = analyzeResponse(response, correspondences);
+                    const analysis = analyzer.analyzeResponse(response, referenceCategories, 3, 0.4);
                     
-                    categories.slice(0, maxMatches).forEach((category, i) => {
-                        processedRow[`Catégorie ${i + 1}`] = category;
+                    // Remplir les catégories matchées
+                    analysis.matchedCategories.forEach((category, i) => {
+                        if (i < 3) {
+                            processedRow[`Catégorie ${i + 1}`] = category;
+                        }
                     });
+                    
+                    // Remplir la traduction IA
+                    processedRow['Traduction IA'] = analysis.translatedText || '';
+                    
+                    // Si aucune correspondance trouvée
+                    if (analysis.matchedCategories.length === 0 && !analysis.translatedText) {
+                        processedRow['Traduction IA'] = 'Réponse non analysable';
+                    }
+                } else {
+                    processedRow['Traduction IA'] = 'Réponse vide';
                 }
                 
                 results.push(processedRow);
                 
-                if (index % 100 === 0) {
-                    updateProgress(70 + (index / mainData.length) * 15, `Traitement: ${index + 1}/${mainData.length}`);
+                if (index % 50 === 0) {
+                    updateProgress(40 + (index / mainData.length) * 40, `Analyse: ${index + 1}/${mainData.length}`);
                 }
             });
             
             return results;
         }
 
-        function analyzeResponse(response, correspondences) {
-            const responseText = response.toString().toLowerCase().trim();
+        // Analyse hybride avec dictionnaire
+        async function processWithHybridAnalysis(mainData, referenceCategories, dictData, responseColumn, idColumn) {
+            const analyzer = new IntelligentMultiConceptAnalyzer();
+            const results = [];
             
-            // Cas spéciaux
-            if (['rien', 'aucun', 'non', 'néant', ''].includes(responseText)) {
-                return [];
-            }
+            updateProgress(40, 'Chargement du dictionnaire...');
             
-            const foundCategories = [];
+            // Charger le dictionnaire
+            const customDict = {};
+            const dictColumns = Object.keys(dictData[0]);
+            const sourceCol = dictColumns[0];
+            const targetCol = dictColumns[1];
             
-            // Rechercher les correspondances
-            for (const [keyword, category] of Object.entries(correspondences)) {
+            dictData.forEach(row => {
+                const source = row[sourceCol];
+                const target = row[targetCol];
+                if (source && target) {
+                    customDict[source.toString().toLowerCase().trim()] = target.toString().trim();
+                }
+            });
+            
+            updateProgress(50, 'Analyse hybride en cours...');
+            
+            mainData.forEach((row, index) => {
+                const response = row[responseColumn];
+                const processedRow = { ...row };
+                
+                processedRow['Catégorie 1'] = '';
+                processedRow['Catégorie 2'] = '';
+                processedRow['Catégorie 3'] = '';
+                processedRow['Traduction IA'] = '';
+                processedRow['Méthode'] = '';
+                
+                if (response && response.toString().trim() !== '') {
+                    // 1. Recherche dans le dictionnaire d'abord
+                    const dictMatches = findDictionaryMatches(response, customDict);
+                    
+                    if (dictMatches.length > 0) {
+                        dictMatches.slice(0, 3).forEach((category, i) => {
+                            processedRow[`Catégorie ${i + 1}`] = category;
+                        });
+                        processedRow['Méthode'] = 'Dictionnaire';
+                    } else {
+                        // 2. Analyse intelligente
+                        const analysis = analyzer.analyzeResponse(response, referenceCategories, 3, 0.4);
+                        
+                        analysis.matchedCategories.forEach((category, i) => {
+                            if (i < 3) {
+                                processedRow[`Catégorie ${i + 1}`] = category;
+                            }
+                        });
+                        
+                        processedRow['Traduction IA'] = analysis.translatedText || '';
+                        processedRow['Méthode'] = analysis.matchedCategories.length > 0 ? 'IA' : 'Non identifié';
+                    }
+                }
+                
+                results.push(processedRow);
+                
+                if (index % 50 === 0) {
+                    updateProgress(50 + (index / mainData.length) * 35, `Traitement: ${index + 1}/${mainData.length}`);
+                }
+            });
+            
+            return results;
+        }
+
+        // Analyse avancée avec paramètres
+        async function processWithAdvancedAnalysis(mainData, referenceCategories, responseColumn, idColumn) {
+            const analyzer = new IntelligentMultiConceptAnalyzer();
+            const results = [];
+            
+            // Récupérer les paramètres
+            const threshold = parseFloat(document.getElementById('similarity-threshold').value) / 100;
+            const maxConcepts = parseInt(document.getElementById('max-concepts').value);
+            const analysisMode = document.getElementById('analysis-mode').value;
+            
+            updateProgress(40, `Analyse personnalisée (seuil: ${Math.round(threshold*100)}%)...`);
+            
+            mainData.forEach((row, index) => {
+                const response = row[responseColumn];
+                const processedRow = { ...row };
+                
+                // Initialiser les colonnes dynamiquement
+                for (let i = 1; i <= maxConcepts; i++) {
+                    processedRow[`Catégorie ${i}`] = '';
+                }
+                processedRow['Traduction IA'] = '';
+                processedRow['Mode d\'analyse'] = analysisMode;
+                
+                if (response && response.toString().trim() !== '') {
+                    const analysis = analyzer.analyzeResponse(response, referenceCategories, maxConcepts, threshold);
+                    
+                    analysis.matchedCategories.forEach((category, i) => {
+                        if (i < maxConcepts) {
+                            processedRow[`Catégorie ${i + 1}`] = category;
+                        }
+                    });
+                    
+                    processedRow['Traduction IA'] = analysis.translatedText || '';
+                }
+                
+                results.push(processedRow);
+                
+                if (index % 50 === 0) {
+                    updateProgress(40 + (index / mainData.length) * 40, `Analyse: ${index + 1}/${mainData.length}`);
+                }
+            });
+            
+            return results;
+        }
+
+        function findDictionaryMatches(response, customDict) {
+            const responseText = response.toString().toLowerCase();
+            const matches = [];
+            
+            for (const [keyword, category] of Object.entries(customDict)) {
                 if (responseText.includes(keyword.toLowerCase())) {
-                    if (!foundCategories.includes(category)) {
-                        foundCategories.push(category);
+                    if (!matches.includes(category)) {
+                        matches.push(category);
                     }
                 }
             }
             
-            // Si aucune correspondance trouvée
-            if (foundCategories.length === 0) {
-                foundCategories.push("Non identifié");
-            }
-            
-            return foundCategories;
+            return matches;
         }
 
         // Finalisation des résultats
         async function finalizeResults(processedResults, originalData, responseColumn) {
             processedData = processedResults;
             
-            // Calculer les statistiques
             const stats = calculateStats(processedResults, responseColumn);
             displayStats(stats);
             
-            // Générer des exemples
-            const examples = generateExamples(processedResults, responseColumn, 10);
+            const examples = generateExamples(processedResults, responseColumn, 15);
             displayExamples(examples);
             
-            // Préparer l'interface de téléchargement
             setupDownloadInterface();
             
-            updateStatus('✅ Traitement terminé avec succès!', 'success');
+            updateStatus('✅ Analyse multi-concepts terminée avec succès!', 'success');
         }
 
         function calculateStats(data, responseColumn) {
@@ -1398,7 +1488,8 @@
                 processed: 0,
                 empty: 0,
                 withCategories: 0,
-                unidentified: 0
+                withTranslation: 0,
+                multiConcepts: 0
             };
             
             data.forEach(row => {
@@ -1408,20 +1499,19 @@
                 } else {
                     stats.processed++;
                     
-                    const hasCategories = Object.keys(row).some(key => 
+                    const categoriesCount = Object.keys(row).filter(key => 
                         key.startsWith('Catégorie') && row[key] && row[key] !== ''
-                    );
+                    ).length;
                     
-                    if (hasCategories) {
+                    if (categoriesCount > 0) {
                         stats.withCategories++;
-                        
-                        const hasUnidentified = Object.keys(row).some(key => 
-                            key.startsWith('Catégorie') && row[key] === 'Non identifié'
-                        );
-                        
-                        if (hasUnidentified) {
-                            stats.unidentified++;
+                        if (categoriesCount > 1) {
+                            stats.multiConcepts++;
                         }
+                    }
+                    
+                    if (row['Traduction IA'] && row['Traduction IA'] !== '') {
+                        stats.withTranslation++;
                     }
                 }
             });
@@ -1433,6 +1523,9 @@
             const statsContainer = document.getElementById('statsContainer');
             const statsDiv = document.getElementById('stats');
             
+            const successRate = stats.processed > 0 ? Math.round((stats.withCategories / stats.processed) * 100) : 0;
+            const multiConceptRate = stats.processed > 0 ? Math.round((stats.multiConcepts / stats.processed) * 100) : 0;
+            
             statsDiv.innerHTML = `
                 <div class="stat-card">
                     <div class="stat-number">${stats.total}</div>
@@ -1440,23 +1533,23 @@
                 </div>
                 <div class="stat-card">
                     <div class="stat-number">${stats.processed}</div>
-                    <div>Lignes traitées</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">${stats.empty}</div>
-                    <div>Lignes vides</div>
+                    <div>Réponses analysées</div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-number">${stats.withCategories}</div>
-                    <div>Avec catégories</div>
+                    <div>Correspondances trouvées</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-number">${stats.unidentified}</div>
-                    <div>Non identifiées</div>
+                    <div class="stat-number">${stats.multiConcepts}</div>
+                    <div>Multi-concepts détectés</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-number">${Math.round((stats.withCategories / stats.processed) * 100)}%</div>
-                    <div>Taux de réussite</div>
+                    <div class="stat-number">${stats.withTranslation}</div>
+                    <div>Traductions IA</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">${successRate}%</div>
+                    <div>Taux de matching</div>
                 </div>
             `;
             
@@ -1471,15 +1564,20 @@
             
             for (let i = 0; i < Math.min(count, processedData.length); i++) {
                 const row = processedData[i];
-                const categories = Object.keys(row)
-                    .filter(key => key.startsWith('Catégorie'))
-                    .map(key => row[key])
-                    .filter(cat => cat && cat !== '');
+                const categories = [];
+                
+                for (let j = 1; j <= 6; j++) {
+                    const cat = row[`Catégorie ${j}`];
+                    if (cat && cat !== '') {
+                        categories.push(cat);
+                    }
+                }
                 
                 examples.push({
-                    id: Object.values(row)[0], // Premier champ = ID
+                    id: Object.values(row)[0],
                     response: row[responseColumn],
-                    categories: categories
+                    categories: categories,
+                    translation: row['Traduction IA'] || ''
                 });
             }
             
@@ -1492,11 +1590,14 @@
             
             let htmlExamples = '';
             examples.forEach(example => {
+                const categoriesText = example.categories.length > 0 ? example.categories.join(' | ') : 'Aucune';
+                const translationText = example.translation ? `<br><strong>Traduction IA:</strong> "${example.translation}"` : '';
+                
                 htmlExamples += `
                     <div class="example-item">
                         <strong>ID:</strong> ${example.id}<br>
                         <strong>Réponse:</strong> "${example.response}"<br>
-                        <strong>Catégories:</strong> ${example.categories.join(', ') || 'Aucune'}
+                        <strong>Catégories matchées:</strong> ${categoriesText}${translationText}
                     </div>
                 `;
             });
@@ -1547,11 +1648,7 @@
                         <tbody>
             `;
 
-            // Limiter l'affichage pour la performance
-            const displayLimit = PUBLIC_VERSION ? 1000 : processedData.length;
-            const dataToShow = processedData.slice(0, displayLimit);
-
-            dataToShow.forEach(row => {
+            processedData.forEach(row => {
                 html += '<tr>';
                 columns.forEach(col => {
                     const value = row[col] || '';
@@ -1559,12 +1656,6 @@
                 });
                 html += '</tr>';
             });
-
-            if (processedData.length > displayLimit) {
-                html += `<tr><td colspan="${columns.length}" style="text-align: center; color: #666; font-style: italic;">
-                    ... et ${processedData.length - displayLimit} autres lignes (utilisez l'export pour voir toutes les données)
-                </td></tr>`;
-            }
 
             html += `
                         </tbody>
@@ -1576,34 +1667,105 @@
         }
 
         function exportCSV() {
-            if (!processedData || processedData.length === 0) return;
+            if (!processedData || processedData.length === 0) {
+                alert('Aucune donnée à exporter');
+                return;
+            }
 
-            const columns = Object.keys(processedData[0]);
-            let csv = columns.join(',') + '\n';
+            try {
+                const columns = Object.keys(processedData[0]);
+                let csv = '\uFEFF'; // BOM pour Excel UTF-8
+                csv += columns.join(',') + '\n';
 
-            processedData.forEach(row => {
-                const values = columns.map(col => {
-                    let value = (row[col] || '').toString();
-                    if (value.includes(',') || value.includes('"') || value.includes('\n')) {
-                        value = '"' + value.replace(/"/g, '""') + '"';
-                    }
-                    return value;
+                processedData.forEach(row => {
+                    const values = columns.map(col => {
+                        let value = (row[col] || '').toString();
+                        // Échapper les guillemets et virgules
+                        if (value.includes(',') || value.includes('"') || value.includes('\n') || value.includes('\r')) {
+                            value = '"' + value.replace(/"/g, '""') + '"';
+                        }
+                        return value;
+                    });
+                    csv += values.join(',') + '\n';
                 });
-                csv += values.join(',') + '\n';
-            });
 
-            downloadFile(csv, 'resultats_analyse.csv', 'text/csv');
+                // Générer le nom de fichier avec timestamp
+                const timestamp = new Date().toISOString().slice(0, 19).replace(/[:.]/g, '-');
+                const filename = `analyse_multi_concepts_${timestamp}.csv`;
+                
+                downloadFile(csv, filename, 'text/csv;charset=utf-8;');
+                updateStatus('✅ Fichier CSV exporté avec succès!', 'success');
+                
+            } catch (error) {
+                console.error('Erreur lors de l\'exportation CSV:', error);
+                updateStatus('❌ Erreur lors de l\'exportation CSV.', 'error');
+            }
         }
 
         function exportExcel() {
-            if (!processedData || processedData.length === 0) return;
+            if (!processedData || processedData.length === 0) {
+                alert('Aucune donnée à exporter');
+                return;
+            }
 
-            const ws = XLSX.utils.json_to_sheet(processedData);
-            const wb = XLSX.utils.book_new();
-            XLSX.utils.book_append_sheet(wb, ws, 'Résultats');
-            
-            const filename = `resultats_analyse_${new Date().toISOString().split('T')[0]}.xlsx`;
-            XLSX.writeFile(wb, filename);
+            try {
+                // Créer une copie des données pour l'export
+                const dataForExport = processedData.map(row => {
+                    const cleanRow = {};
+                    Object.keys(row).forEach(key => {
+                        // Nettoyer les données pour éviter les erreurs Excel
+                        let value = row[key];
+                        if (value === null || value === undefined) {
+                            cleanRow[key] = '';
+                        } else if (typeof value === 'object') {
+                            cleanRow[key] = JSON.stringify(value);
+                        } else {
+                            cleanRow[key] = value.toString();
+                        }
+                    });
+                    return cleanRow;
+                });
+
+                // Créer la feuille de calcul
+                const ws = XLSX.utils.json_to_sheet(dataForExport);
+                
+                // Définir la largeur des colonnes
+                const colWidths = [];
+                if (dataForExport.length > 0) {
+                    Object.keys(dataForExport[0]).forEach(key => {
+                        const maxLength = Math.max(
+                            key.length,
+                            ...dataForExport.map(row => (row[key] || '').toString().length)
+                        );
+                        colWidths.push({ wch: Math.min(maxLength + 2, 50) });
+                    });
+                }
+                ws['!cols'] = colWidths;
+
+                // Créer le classeur
+                const wb = XLSX.utils.book_new();
+                XLSX.utils.book_append_sheet(wb, ws, 'Analyse Multi-Concepts');
+                
+                // Générer le nom de fichier avec timestamp
+                const timestamp = new Date().toISOString().slice(0, 19).replace(/[:.]/g, '-');
+                const filename = `analyse_multi_concepts_${timestamp}.xlsx`;
+                
+                // Télécharger le fichier
+                XLSX.writeFile(wb, filename);
+                
+                updateStatus('✅ Fichier Excel exporté avec succès!', 'success');
+                
+            } catch (error) {
+                console.error('Erreur lors de l\'exportation Excel:', error);
+                updateStatus('❌ Erreur lors de l\'exportation Excel. Essayez l\'export CSV.', 'error');
+                
+                // Fallback vers CSV si Excel échoue
+                setTimeout(() => {
+                    if (confirm('L\'export Excel a échoué. Voulez-vous essayer l\'export CSV à la place ?')) {
+                        exportCSV();
+                    }
+                }, 1000);
+            }
         }
 
         function copyTableData() {
@@ -1618,37 +1780,56 @@
             });
 
             navigator.clipboard.writeText(text).then(() => {
-                alert('✅ Données copiées dans le presse-papiers!');
+                alert('Données copiées dans le presse-papiers!');
             }).catch(() => {
-                // Fallback
                 const textArea = document.createElement('textarea');
                 textArea.value = text;
                 document.body.appendChild(textArea);
                 textArea.select();
                 document.execCommand('copy');
                 document.body.removeChild(textArea);
-                alert('✅ Données copiées dans le presse-papiers!');
+                alert('Données copiées dans le presse-papiers!');
             });
         }
 
         function downloadFile(content, filename, contentType) {
-            const blob = new Blob([content], { type: contentType });
-            const url = window.URL.createObjectURL(blob);
-            const link = document.createElement('a');
-            link.href = url;
-            link.download = filename;
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-            window.URL.revokeObjectURL(url);
-        }
-
-        // Analytics simple (optionnel - version publique)
-        if (PUBLIC_VERSION) {
-            window.addEventListener('load', function() {
-                // Tracker simple d'utilisation (anonyme)
-                console.log('🔄 Analyseur de Texte Universel v2.0.0 - Version publique chargée');
-            });
+            try {
+                const blob = new Blob([content], { type: contentType });
+                const url = window.URL.createObjectURL(blob);
+                const link = document.createElement('a');
+                link.href = url;
+                link.download = filename;
+                link.style.display = 'none';
+                
+                // Ajouter au DOM, cliquer, puis supprimer
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                
+                // Nettoyer l'URL après un délai
+                setTimeout(() => {
+                    window.URL.revokeObjectURL(url);
+                }, 1000);
+                
+            } catch (error) {
+                console.error('Erreur lors du téléchargement:', error);
+                
+                // Fallback pour navigateurs plus anciens
+                try {
+                    const textArea = document.createElement('textarea');
+                    textArea.value = content;
+                    textArea.style.position = 'fixed';
+                    textArea.style.opacity = '0';
+                    document.body.appendChild(textArea);
+                    textArea.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(textArea);
+                    alert('Le téléchargement a échoué, mais les données ont été copiées dans le presse-papiers.');
+                } catch (fallbackError) {
+                    console.error('Erreur de fallback:', fallbackError);
+                    alert('Erreur lors du téléchargement. Essayez de copier les données manuellement.');
+                }
+            }
         }
     </script>
 </body>
